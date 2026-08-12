@@ -92,7 +92,7 @@ export async function startVirtualTryOn(
       },
     );
     const data = await response.json();
-    console.log("data object", { response, data });
+
     if (!response.ok)
       return {
         success: false,
@@ -116,7 +116,7 @@ export async function checkTaskStatus(taskId: string) {
       {
         method: "GET",
         headers: {
-          "x-api-key": apiKey,
+          Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json",
         },
       },

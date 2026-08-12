@@ -42,6 +42,7 @@ export default function Home() {
         setStatus(`Error: ${data.error}`);
       }
     } catch (error) {
+      console.error(error);
       setStatus(`Failed to upload ${type}.`);
     } finally {
       setIsLoading(false);
@@ -69,26 +70,35 @@ export default function Home() {
   // The Polling Loop
   const pollStatus = async (taskId: string) => {
     const check = await checkTaskStatus(taskId);
-    console.log("check", check);
+
     if (!check.success) {
       setStatus(`Task Error: ${check.error}`);
       setIsLoading(false);
       return;
     }
 
-    const currentStatus = check.status?.toLowerCase();
+    const currentStatus = check.taskStatus;
 
-    if (currentStatus === "completed" || currentStatus === "done") {
-      setFinalImageUrl(check.resultUrl);
-      setStatus("Success! Here is your bespoke AI design.");
+    if (
+      currentStatus === "completed" ||
+      currentStatus === "done" ||
+      currentStatus === "success"
+    ) {
+      if (check.resultUrl) {
+        setFinalImageUrl(check.resultUrl);
+        setStatus("Success! Here is your bespoke AI design.");
+      } else {
+        setStatus("Task completed, but no image was returned");
+      }
       setIsLoading(false);
-    } else if (currentStatus === "failed") {
+    } else if (currentStatus === "failed" || currentStatus === 'error') {
       setStatus(
         "The AI failed to process these images. Try a different photo.",
       );
       setIsLoading(false);
     } else {
       // If still processing, wait 3 seconds and ask again!
+      setStatus("AI is tailoring your outfit (processing)...");
       setTimeout(() => pollStatus(taskId), 3000);
     }
   };
