@@ -71,6 +71,7 @@ export async function uploadToYouCam(formData: FormData) {
 export async function startVirtualTryOn(
   modelFileId: string,
   garmentFileId: string,
+  garmentCategory: string = "auto",
 ) {
   const apiKey = process.env.YOUCAM_API_KEY;
   if (!apiKey) return { success: false, error: "API Key is missing" };
@@ -87,7 +88,7 @@ export async function startVirtualTryOn(
         body: JSON.stringify({
           src_file_id: modelFileId,
           ref_file_id: garmentFileId,
-          garment_category: "auto",
+          garment_category: garmentCategory,
         }),
       },
     );
