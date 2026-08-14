@@ -94,6 +94,12 @@ export default function Home() {
       setNotifyStatus("Please use a valid email address!");
       return;
     }
+
+    setNotifyStatus(
+      `Thanks, we'll be in touch about the ${selectedProduct.name}`,
+    );
+     setEmail("");
+    setNotifySubmitted(true);
   };
 
   // The Master Try-On Function
