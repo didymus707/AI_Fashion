@@ -1,0 +1,42 @@
+export type Product = {
+  id: number;
+  name: string;
+  price: string | null;
+  image: string | null;
+  category:
+    | "full_body"
+    | "upper_body"
+    | "lower_body"
+    | "outerwear"
+    | "shoes"
+    | "auto";
+  status: "in_stock" | "concept";
+  tagline: string; // small subtitle on product card
+  description: string;
+};
+
+// Our Updated Store Inventory
+const INVENTORY: Product[] = [
+  {
+    id: 1,
+    name: "Noir Print Dinner Gown",
+    price: "£44.99",
+    image: "/black-dress.jpg",
+    category: "full_body",
+    status: "in_stock",
+    tagline: "In stock · Sourced from Lagos",
+    description:
+      "An elegant, form-fitting dress in a subtle black leopard print. Features a unique bodice cutout and a flattering draped waistline.",
+  },
+  {
+    id: 2,
+    name: "Monochrome Brushstroke Co-ord",
+    price: "£43.99",
+    image: "/wifey-design-1.jpg",
+    category: "full_body",
+    status: "in_stock",
+    tagline: "In stock · Sourced from Lagos",
+    description:
+      "Make a bold statement with this striking two-piece matching set. Featuring a dramatic black-and-white abstract brushstroke print, this ensemble pairs a relaxed-fit, button-down shirt with flowing wide-leg trousers for an effortless, chic silhouette.",
+  },
+];
