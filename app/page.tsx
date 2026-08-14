@@ -3,23 +3,7 @@
 import { useState, ChangeEvent } from "react";
 import Image from "next/image";
 import { uploadToYouCam, startVirtualTryOn, checkTaskStatus } from "./actions";
-
-type Product = {
-  id: number;
-  name: string;
-  price: string | null;
-  image: string | null;
-  category:
-    | "full_body"
-    | "upper_body"
-    | "lower_body"
-    | "outerwear"
-    | "shoes"
-    | "auto";
-  status: "in_stock" | "concept";
-  tagline: string; // small subtitle on product card
-  description: string;
-};
+import { Product } from "./products/data";
 
 // Our Updated Store Inventory
 const INVENTORY: Product[] = [
