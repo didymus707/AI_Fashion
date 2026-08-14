@@ -345,7 +345,7 @@ export default function Home() {
                     </>
                   )}
                   {notifyStatus && !notifySubmitted && (
-                    <p className="text-xs text-center text-purple-900 pt-2">
+                    <p className="text-xs text-center text-red-600 pt-2">
                       {notifyStatus}
                     </p>
                   )}
