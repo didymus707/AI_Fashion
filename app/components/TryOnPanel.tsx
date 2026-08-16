@@ -249,7 +249,7 @@ const TryOnPanel = ({
 
           {garmentSource.type === "product" && (
             <p className="text-xs text-gray-500 text-center">
-              Tip: front-facing photo with shoulders visible works best.
+              Tip: front-facing photo of you with shoulders visible works best.
             </p>
           )}
 
