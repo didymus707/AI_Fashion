@@ -168,6 +168,27 @@ const TryOnPanel = ({
             Virtual Muse & Stitch Try-On
           </h3>
 
+          {garmentSource.type === "upload" && (
+            <div className="bg-purple-50/70 border border-purple-200 rounded-md p-4 text-xs text-purple-900/80 space-y-2">
+              <p className="font-semibold uppercase tracking-wider text-purple-900">
+                For best results
+              </p>
+              <ul className="space-y-1 list-disc list-inside marker:text-purple-400">
+                <li>
+                  Design inspiration: front-facing, single garment clearly
+                  visible.
+                </li>
+                <li>
+                  Your photo: face and shoulders visible, standing forward,
+                  plain background.
+                </li>
+                <li>
+                  Avoid group photos, obstructed clothing, or unusual poses.
+                </li>
+              </ul>
+            </div>
+          )}
+
           <div
             className={`grid gap-4 ${garmentSource.type === "upload" ? "grid-cols-2" : "grid-cols-1"}`}
           >
@@ -225,6 +246,12 @@ const TryOnPanel = ({
               </div>
             )}
           </div>
+
+          {garmentSource.type === "product" && (
+            <p className="text-xs text-gray-500 text-center">
+              Tip: front-facing photo with shoulders visible works best.
+            </p>
+          )}
 
           {status && (
             <div className="text-sm font-medium text-center text-purple-900 bg-purple-100 p-3 rounded-md border border-purple-200">
