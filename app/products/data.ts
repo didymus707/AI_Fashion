@@ -26,7 +26,7 @@ export const INVENTORY: Product[] = [
   {
     id: 1,
     name: "Stylish Aso-Oke Dress",
-    price: "£43.99",
+    price: null,
     image: "/aso-oke-dress.jpg",
     category: "full_body",
     status: "concept",
@@ -37,7 +37,7 @@ export const INVENTORY: Product[] = [
   {
     id: 2,
     name: "Elegantly Designed Aso Oke Dress",
-    price: "£43.99",
+    price: null,
     image: "/aso-oke-top.jpg",
     category: "full_body",
     status: "concept",
