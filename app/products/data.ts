@@ -25,7 +25,7 @@ export type GarmentSource =
 export const INVENTORY: Product[] = [
   {
     id: 1,
-    name: "Stylish Aso-Oke Dress",
+    name: "The Olori Sculpted Mini",
     price: null,
     image: "/aso-oke-dress.jpg",
     category: "full_body",
@@ -36,7 +36,7 @@ export const INVENTORY: Product[] = [
   },
   {
     id: 2,
-    name: "Elegantly Designed Aso Oke Dress",
+    name: "The Majestic Illusion Blouse",
     price: null,
     image: "/aso-oke-top.jpg",
     category: "full_body",
@@ -55,5 +55,27 @@ export const INVENTORY: Product[] = [
     tagline: "In stock · Sourced from Lagos",
     description:
       "Make a bold statement with this striking two-piece matching set. Featuring a dramatic black-and-white abstract brushstroke print, this ensemble pairs a relaxed-fit, button-down shirt with flowing wide-leg trousers for an effortless, chic silhouette.",
+  },
+  {
+    id: 4,
+    name: "The Empress Structured Mini",
+    price: null,
+    image: "/ankara-aso-oke-mini.jpg",
+    category: "full_body",
+    status: "concept",
+    tagline: "Made-to-order · Tailored in Ibadan",
+    description:
+      "A flawless marriage of cultural heritage and modern tailoring. This breathtaking piece features a vibrant Ankara corset bodice with statement puff sleeves and intricate contrast piping. It flows seamlessly into a textured Aso-oke skirt, masterfully seamed to accentuate a striking hourglass silhouette.",
+  },
+  {
+    id: 5,
+    name: "The Sovereign Peplum Suit",
+    price: null,
+    image: "/navy-peplum.jpg",
+    category: "full_body",
+    status: "concept",
+    tagline: "Made-to-order · Tailored in Ibadan",
+    description:
+      "Exude absolute power and elegance in this meticulously tailored two-piece ensemble. Crafted in a rich navy textured fabric, the structured jacket features striking gold button closures, a delicate 3D floral shoulder appliqué, and a statement peplum adorned with a vibrant Ankara print. Paired with a sleek, front-slit midi skirt, this suit redefines boardroom-to-evening couture.",
   },
 ];

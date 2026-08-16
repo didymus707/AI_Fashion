@@ -62,7 +62,7 @@ export default function Home() {
           <h2 className="text-3xl font-serif text-purple-950 mb-2">
             {selectedProduct.name}
           </h2>
-          <p className="text-2xl font-medium text-purple-900 mb-6">
+          <p className="text-xl font-medium text-purple-900 mb-6">
             {selectedProduct.price ?? "Made to order"}
           </p>
           <p className="text-gray-600 text-sm leading-relaxed mb-8 pb-8 border-b border-purple-100">
