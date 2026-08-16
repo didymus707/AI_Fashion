@@ -302,11 +302,11 @@ const TryOnPanel = ({
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
-                  className="w-full p-3 border border-purple-200 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-900 focus:border-purple-900"
+                  className="w-full p-3 text-sm border border-purple-200 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-900 focus:border-purple-900"
                 />
                 <button
                   onClick={handleNotify}
-                  className="w-full bg-black text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors"
+                  className="w-full bg-purple-950 text-white py-3 px-2 rounded-md text-xs md:text-sm font-medium uppercase tracking-wider hover:bg-purple-900 transition-colors shadow-sm"
                 >
                   {productPrice
                     ? `Notify me — ${productPrice}`
