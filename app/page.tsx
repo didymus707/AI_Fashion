@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { INVENTORY, Product } from "./products/data";
 import TryOnPanel from "./components/TryOnPanel";
-import Link from "next/link";
 
 export default function Home() {
   const [selectedProduct, setSelectedProduct] = useState<Product>(INVENTORY[0]);
@@ -18,27 +17,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#FDFCFE] text-gray-900 font-sans pb-24 selection:bg-purple-200">
-      {/* Navigation */}
-      <nav className="w-full bg-white border-b border-purple-100 px-8 py-5 flex justify-between items-center sticky top-0 z-10 shadow-sm">
-        <div className="gap-6 text-sm font-medium text-gray-500 hidden md:flex">
-          <Link href="/" className="text-purple-900 transition-colors">
-            COLLECTIONS
-          </Link>
-          <Link
-            href="/bespoke"
-            className="hover:text-purple-900 transition-colors"
-          >
-            BESPOKE
-          </Link>
-        </div>
-
-        <h1 className="text-3xl font-serif font-bold tracking-tight text-purple-950 text-center flex-1 md:flex-none">
-          Maison de Luxe
-        </h1>
-
-        <div className="w-16 hidden md:block" />
-      </nav>
-
       {/* Main PDP Content */}
       <div className="max-w-5xl mx-auto px-4 md:px-8 mt-8 grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Column: Product Gallery */}
