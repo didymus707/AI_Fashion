@@ -6,7 +6,7 @@ type GarmentCategory =
   | "shoes"
   | "auto";
 
-  export type Product = {
+export type Product = {
   id: number;
   name: string;
   price: string | null;
@@ -25,17 +25,6 @@ export type GarmentSource =
 export const INVENTORY: Product[] = [
   {
     id: 1,
-    name: "Noir Print Dinner Gown",
-    price: "£44.99",
-    image: "/black-dress.jpg",
-    category: "full_body",
-    status: "in_stock",
-    tagline: "In stock · Sourced from Lagos",
-    description:
-      "An elegant, form-fitting dress in a subtle black leopard print. Features a unique bodice cutout and a flattering draped waistline.",
-  },
-  {
-    id: 2,
     name: "Monochrome Brushstroke Co-ord",
     price: "£43.99",
     image: "/wifey-design-1.jpg",
@@ -46,7 +35,7 @@ export const INVENTORY: Product[] = [
       "Make a bold statement with this striking two-piece matching set. Featuring a dramatic black-and-white abstract brushstroke print, this ensemble pairs a relaxed-fit, button-down shirt with flowing wide-leg trousers for an effortless, chic silhouette.",
   },
   {
-    id: 3,
+    id: 2,
     name: "Stylish Aso-Oke Design Dress",
     price: "£43.99",
     image: "/aso-oke-dress.jpg",
@@ -54,17 +43,16 @@ export const INVENTORY: Product[] = [
     status: "concept",
     tagline: "",
     description:
-      "Make a bold statement with this striking two-piece matching set. Featuring a dramatic black-and-white abstract brushstroke print, this ensemble pairs a relaxed-fit, button-down shirt with flowing wide-leg trousers for an effortless, chic silhouette.",
+      "Make a bold statement with this Aso Oke dress. Elegantly styled and fitted for your events and gatherings.",
   },
   {
-    id: 4,
+    id: 3,
     name: "Aso Oke Top",
     price: "£43.99",
     image: "/aso-oke-top.jpg",
     category: "upper_body",
     status: "concept",
     tagline: "",
-    description:
-      "Make a bold statement with this striking two-piece matching set. Featuring a dramatic black-and-white abstract brushstroke print, this ensemble pairs a relaxed-fit, button-down shirt with flowing wide-leg trousers for an effortless, chic silhouette.",
+    description: "A beautiful inspired top made from aso oke and amkara",
   },
 ];
