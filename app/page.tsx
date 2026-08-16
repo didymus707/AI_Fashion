@@ -40,9 +40,9 @@ export default function Home() {
       </nav>
 
       {/* Main PDP Content */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 mt-8 grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Column: Product Gallery */}
-        <div className="lg:col-span-6 space-y-6">
+        <div className="space-y-6">
           <div className="relative w-full aspect-[3/4] bg-purple-50 rounded-md overflow-hidden flex items-center justify-center">
             <Image
               src={selectedProduct.image as string}
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
 
         {/* Right Column: Details & Try-On */}
-        <div className="lg:col-span-6 flex flex-col pt-4">
+        <div className="flex flex-col pt-4">
           <h2 className="text-3xl font-serif text-purple-950 mb-2">
             {selectedProduct.name}
           </h2>
