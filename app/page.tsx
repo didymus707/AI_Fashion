@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { INVENTORY, Product } from "./products/data";
 import TryOnPanel from "./components/TryOnPanel";
+import Link from "next/link";
 
 export default function Home() {
   const [selectedProduct, setSelectedProduct] = useState<Product>(INVENTORY[0]);
@@ -29,12 +30,15 @@ export default function Home() {
       {/* Navigation */}
       <nav className="w-full bg-white border-b border-purple-100 px-8 py-5 flex justify-between items-center sticky top-0 z-10 shadow-sm">
         <div className="gap-6 text-sm font-medium text-gray-500 hidden md:flex">
-          <a href="#" className="hover:text-purple-900 transition-colors">
+          <Link href="/" className="text-purple-900 transition-colors">
             COLLECTIONS
-          </a>
-          <a href="#" className="text-purple-900 transition-colors">
-            Muse & Stitch
-          </a>
+          </Link>
+          <Link
+            href="/bespoke"
+            className="hover:text-purple-900 transition-colors"
+          >
+            BESPOKE
+          </Link>
         </div>
 
         <h1 className="text-3xl font-serif font-bold tracking-tight text-purple-950 text-center flex-1 md:flex-none">
