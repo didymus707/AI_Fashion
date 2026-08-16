@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Maison de Luxe | AI-Driven Bespoke 
 
-## Getting Started
+Maison de Luxe is a next-generation, on-demand AI fashion e-commerce storefront. It bridges the gap between digital design and artisan craftsmanship by allowing customers to preview curated designer collections—or upload their own custom fashion inspirations—and instantly visualize the garments on their own bodies using advanced AI virtual try-on technology.
 
-First, run the development server:
+---
 
+## ✨ Key Features
+
+* **AI Virtual Try-On Engine:** Powered by the YouCam Cloth-v4 API, enabling seamless asynchronous image stitching and real-time status polling.
+* **The Bespoke Commission Mode:** Empowers customers to upload custom design inspirations (e.g., from Pinterest or Instagram) and preview them before ordering.
+* **Curated Collections Gallery:** Showcases high-end apparel (Aso-oke, Ankara couture, and luxury dresses) with rich editorial descriptions.
+* **Responsive Editorial UI:** Styled with a sophisticated purple-and-white luxury design system, complete with mobile hamburger navigation and active route highlighting using Next.js App Router and Tailwind CSS.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Framework:** Next.js (App Router, Server Actions)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **AI Integration:** YouCam S2S v4.0 Task Cloth-v4 API
+* **Deployment:** Vercel
+
+---
+
+## 🚀 Getting Started Locally
+
+### Prerequisites
+Make sure you have Node.js (version 18+) installed on your machine.
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [https://github.com/your-username/ai-fashion-mvp.git](https://github.com/your-username/ai-fashion-mvp.git)
+cd ai-fashion-mvp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Configure Environment Variables
+Create a `.env.local` file in the root directory of your project and add your YouCam API key:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+YOUCAM_API_KEY=your_youcam_api_key_here
+```
 
-## Learn More
+### 4. Run the Development Server
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the storefront.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Deployment on Vercel
 
-## Deploy on Vercel
+The easiest way to deploy your Maison de Luxe storefront is via Vercel.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to a GitHub repository.
+2. Import the project into [Vercel](https://vercel.com/).
+3. In the project settings, add the following **Environment Variable**:
+   * **Key:** `YOUCAM_API_KEY`
+   * **Value:** `your_actual_youcam_api_key`
+4. Click **Deploy**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📄 License & Attribution
+
+Developed as an AI-Driven B2B Solutions, showcasing zero-inventory, on-demand luxury fashion retail.
