@@ -1,29 +1,22 @@
 import Image from "next/image";
 import { useState, ChangeEvent } from "react";
 import { checkTaskStatus, startVirtualTryOn, uploadToYouCam } from "../actions";
-
-type GarmentCategory =
-  | "full_body"
-  | "upper_body"
-  | "lower_body"
-  | "outerwear"
-  | "shoes"
-  | "auto";
-
-type GarmentSource =
-  | { type: "product"; imageUrl: string; category: GarmentCategory }
-  | { type: "upload"; category: GarmentCategory };
+import { GarmentSource } from "../products/data";
 
 type TryOnPanelProps = {
-  garmentSource: GarmentSource;
   productName: string;
+  isLoading: boolean;
   productPrice: string | null;
+  garmentSource: GarmentSource;
+  onLoadingChange: (loading: boolean) => void;
 };
 
 const TryOnPanel = ({
-  garmentSource,
+  isLoading,
   productName,
   productPrice,
+  garmentSource,
+  onLoadingChange,
 }: TryOnPanelProps) => {
   const [email, setEmail] = useState<string>("");
   const [notifyStatus, setNotifyStatus] = useState<string>("");
@@ -39,7 +32,6 @@ const TryOnPanel = ({
   );
 
   const [status, setStatus] = useState<string>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [finalImageUrl, setFinalImageUrl] = useState<string | null>(null);
 
   const handlePhotoSelect = (
@@ -94,7 +86,7 @@ const TryOnPanel = ({
       return;
     }
 
-    setIsLoading(true);
+    onLoadingChange(true);
     setStatus("Preparing your fit...");
 
     try {
@@ -131,7 +123,7 @@ const TryOnPanel = ({
     } catch (error: unknown) {
       const message = error instanceof Error ? error.message : String(error);
       setStatus(message || "An error occurred.");
-      setIsLoading(false);
+      onLoadingChange(false);
     }
   };
 
@@ -139,19 +131,19 @@ const TryOnPanel = ({
     const check = await checkTaskStatus(taskId);
     if (!check.success) {
       setStatus(`Task Error: ${check.error}`);
-      setIsLoading(false);
+      onLoadingChange(false);
       return;
     }
     const currentStatus = check.taskStatus;
     if (currentStatus === "success" || currentStatus === "completed") {
       setFinalImageUrl(check.resultUrl);
       setStatus("Success! How does it look?");
-      setIsLoading(false);
+      onLoadingChange(false);
     } else if (currentStatus === "failed" || currentStatus === "error") {
       setStatus(
         "The AI failed to process this combination. Try a clearer photo.",
       );
-      setIsLoading(false);
+      onLoadingChange(false);
     } else {
       setTimeout(() => pollStatus(taskId), 3000);
     }
