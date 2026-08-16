@@ -11,18 +11,9 @@ export default function Home() {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  // const resetTryOn = () => {
-  //   setFinalImageUrl(null);
-  //   setStatus("");
-  //   setNotifySubmitted(false);
-  //   setNotifyStatus("");
-  //   setEmail("");
-  // };
-
   const changeProduct = (product: Product) => {
     if (isLoading) return;
     setSelectedProduct(product);
-    // resetTryOn();
   };
 
   return (
@@ -51,7 +42,7 @@ export default function Home() {
       {/* Main PDP Content */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Left Column: Product Gallery */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="lg:col-span-6 space-y-6">
           <div className="relative w-full aspect-[3/4] bg-purple-50 rounded-md overflow-hidden flex items-center justify-center">
             <Image
               src={selectedProduct.image as string}
@@ -89,7 +80,7 @@ export default function Home() {
         </div>
 
         {/* Right Column: Details & Try-On */}
-        <div className="lg:col-span-5 flex flex-col pt-4">
+        <div className="lg:col-span-6 flex flex-col pt-4">
           <h2 className="text-3xl font-serif text-purple-950 mb-2">
             {selectedProduct.name}
           </h2>
