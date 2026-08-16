@@ -80,7 +80,7 @@ export default function Home() {
         </div>
 
         {/* Right Column: Details & Try-On */}
-        <div className="lg:col-span-5 flex flex-col pt-4">
+        <div className="lg:col-span-6 flex flex-col pt-4">
           <h2 className="text-3xl font-serif text-purple-950 mb-2">
             {selectedProduct.name}
           </h2>
