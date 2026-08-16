@@ -1,19 +1,25 @@
-export type Product = {
+type GarmentCategory =
+  | "full_body"
+  | "upper_body"
+  | "lower_body"
+  | "outerwear"
+  | "shoes"
+  | "auto";
+
+  export type Product = {
   id: number;
   name: string;
   price: string | null;
   image: string | null;
-  category:
-    | "full_body"
-    | "upper_body"
-    | "lower_body"
-    | "outerwear"
-    | "shoes"
-    | "auto";
+  category: GarmentCategory;
   status: "in_stock" | "concept";
   tagline: string; // small subtitle on product card
   description: string;
 };
+
+export type GarmentSource =
+  | { type: "product"; imageUrl: string; category: GarmentCategory }
+  | { type: "upload"; category: GarmentCategory };
 
 // Our Updated Store Inventory
 export const INVENTORY: Product[] = [
@@ -45,8 +51,8 @@ export const INVENTORY: Product[] = [
     price: "£43.99",
     image: "/aso-oke-dress.jpg",
     category: "full_body",
-    status: "in_stock",
-    tagline: "In stock · Sourced from Lagos",
+    status: "concept",
+    tagline: "",
     description:
       "Make a bold statement with this striking two-piece matching set. Featuring a dramatic black-and-white abstract brushstroke print, this ensemble pairs a relaxed-fit, button-down shirt with flowing wide-leg trousers for an effortless, chic silhouette.",
   },
@@ -55,9 +61,9 @@ export const INVENTORY: Product[] = [
     name: "Aso Oke Top",
     price: "£43.99",
     image: "/aso-oke-top.jpg",
-    category: "full_body",
-    status: "in_stock",
-    tagline: "In stock · Sourced from Lagos",
+    category: "upper_body",
+    status: "concept",
+    tagline: "",
     description:
       "Make a bold statement with this striking two-piece matching set. Featuring a dramatic black-and-white abstract brushstroke print, this ensemble pairs a relaxed-fit, button-down shirt with flowing wide-leg trousers for an effortless, chic silhouette.",
   },
